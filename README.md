@@ -1,11 +1,14 @@
 # Cách sử dụng ChatBot nhóm 4 - Lập trình mạng
 
-SQL: ChatBot.bacpac in https://github.com/mafiaTungNui/ChatBotAPI.git
-Code server api: https://github.com/mafiaTungNui/ChatBotAPI.git
-Code Client: https://github.com/mafiaTungNui/ChatBotClient.git
-Code Manager: https://github.com/mafiaTungNui/ChatBotManager.git
+**SQL:** ChatBot.bacpac in https://github.com/mafiaTungNui/ChatBotAPI.git
 
-Add ChatBot.bacmac into SQL server studio
+**Code server api:** https://github.com/mafiaTungNui/ChatBotAPI.git
+
+**Code Client:** https://github.com/mafiaTungNui/ChatBotClient.git
+
+**Code Manager:** https://github.com/mafiaTungNui/ChatBotManager.git
+
+**Add ChatBot.bacmac into SQL server studio*
 
 ![image](https://github.com/user-attachments/assets/da98558c-328d-4a8a-9aa6-46946a4edc70)
 
