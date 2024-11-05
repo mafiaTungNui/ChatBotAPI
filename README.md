@@ -9,6 +9,7 @@
 **Code Quản lí:** https://github.com/mafiaTungNui/ChatBotManager.git
 
 **Thêm ChatBot.bacmac vào SQL Server**
+
 B1
 
 ![image](https://github.com/user-attachments/assets/da98558c-328d-4a8a-9aa6-46946a4edc70)
