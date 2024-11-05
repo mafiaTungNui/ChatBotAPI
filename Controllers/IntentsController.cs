@@ -19,7 +19,7 @@ namespace ChatBotAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Intent>>> GetIntents()
         {
-            return await _context.Intents.Include(i => i.Responses).ToListAsync();
+            return await _context.Intents.ToListAsync();
         }
 
         [HttpGet("{id}")]

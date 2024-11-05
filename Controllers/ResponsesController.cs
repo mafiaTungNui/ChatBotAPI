@@ -34,7 +34,21 @@ namespace ChatBotAPI.Controllers
 
             return response;
         }
+        // Lấy Response dựa vào IntentID
+        [HttpGet("byIntent/{intentId}")]
+        public async Task<ActionResult<IEnumerable<Response>>> GetResponsesByIntent(int intentId)
+        {
+            var responses = await _context.Responses
+                .Where(r => r.IntentID == intentId)
+                .ToListAsync();
 
+            if (responses == null || responses.Count == 0)
+            {
+                return NotFound();
+            }
+
+            return responses;
+        }
         [HttpPost]
         public async Task<ActionResult<Response>> PostResponse(Response response)
         {
