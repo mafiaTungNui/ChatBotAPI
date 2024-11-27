@@ -8,11 +8,11 @@ namespace ChatBotAPI.Models
         [Key]
         public int ResponseID { get; set; }
 
-        public int IntentID { get; set; } // Sử dụng int thay vì string
+        public int IntentID { get; set; }
 
         [ForeignKey("IntentID")]
-        public virtual required Intent IntentNavigation { get; set; } // Khóa ngoại đến Intent
+        public virtual required Intent IntentNavigation { get; set; } 
 
-        public required string ResponseText { get; set; } // Thêm thuộc tính ResponseText
+        public required string ResponseText { get; set; } 
     }
 }
