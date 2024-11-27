@@ -48,16 +48,12 @@ namespace ChatBotAPI.Controllers
             {
                 return BadRequest("Username or Email already exists.");
             }
-
-            // Thêm kiểm tra dữ liệu nếu cần thiết
             if (string.IsNullOrWhiteSpace(user.Username) || string.IsNullOrWhiteSpace(user.Password) || string.IsNullOrWhiteSpace(user.Email))
             {
                 return BadRequest("Username, Password, and Email are required.");
             }
-
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
-
             return CreatedAtAction(nameof(GetUser), new { id = user.UserID }, user);
         }
 
@@ -68,13 +64,12 @@ namespace ChatBotAPI.Controllers
         {
             var user = await _context.Users
                 .FirstOrDefaultAsync(u => u.Username == loginRequest.Username && u.Password == loginRequest.Password);
-
             if (user == null)
             {
                 return Unauthorized("Invalid username or password.");
             }
 
-            return Ok(user); // Trả về thông tin người dùng nếu đăng nhập thành công
+            return Ok(user); 
         }
     }
 }
