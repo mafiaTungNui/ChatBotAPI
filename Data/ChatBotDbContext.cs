@@ -18,7 +18,6 @@ namespace ChatBotAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Thiết lập các quy tắc và cấu hình cho các bảng nếu cần
             modelBuilder.Entity<User>().ToTable("Users");
             modelBuilder.Entity<Conversation>().ToTable("Conversations");
             modelBuilder.Entity<Message>().ToTable("Messages");
