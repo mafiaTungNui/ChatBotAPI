@@ -13,7 +13,7 @@ namespace ChatBotAPI.Models
 
         public DateTime StartTime { get; set; } = DateTime.Now;
 
-        public DateTime? EndTime { get; set; } // Có thể là null nếu chưa kết thúc
+        public DateTime? EndTime { get; set; } 
 
         [StringLength(20)]
         public required string Status { get; set; }
