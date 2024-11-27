@@ -13,7 +13,7 @@ namespace ChatBotAPI.Models
 
         [Required]
         [StringLength(20)]
-        public required string Sender { get; set; } // Có thể là "user" hoặc "bot"
+        public required string Sender { get; set; } 
 
         [Required]
         public required string MessageText { get; set; }
