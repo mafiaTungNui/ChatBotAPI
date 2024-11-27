@@ -29,7 +29,6 @@ namespace ChatBotAPI.Controllers
                 }
             }
 
-            // Trả về intent nếu khoảng cách nhỏ hơn một ngưỡng (ví dụ: 3)
             return minDistance <= 3 ? closestIntent : null;
         }
 
@@ -82,15 +81,12 @@ namespace ChatBotAPI.Controllers
 
             try
             {
-                // Thêm tin nhắn của người dùng vào cơ sở dữ liệu
                 _context.Messages.Add(message);
                 await _context.SaveChangesAsync();
 
-                // Tìm intent khớp chính xác
                 var intent = await _context.Intents.FirstOrDefaultAsync(i => i.IntentName == message.MessageText);
                 if (intent != null)
                 {
-                    // Nếu tìm thấy intent, trả về phản hồi
                     var response = await _context.Responses.FirstOrDefaultAsync(r => r.IntentID == intent.IntentID);
                     if (response != null)
                     {
@@ -108,7 +104,6 @@ namespace ChatBotAPI.Controllers
                     }
                 }
 
-                // Nếu không tìm thấy intent chính xác, tìm intent gần đúng
                 var closestIntent = FindClosestIntent(message.MessageText);
                 if (!string.IsNullOrEmpty(closestIntent))
                 {
@@ -125,7 +120,6 @@ namespace ChatBotAPI.Controllers
                     return Ok(botMessage);
                 }
 
-                // Nếu không tìm thấy intent gần đúng, trả về phản hồi mặc định
                 var fallbackMessage = new Message
                 {
                     ConversationID = message.ConversationID,
